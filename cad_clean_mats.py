@@ -18,8 +18,8 @@
 #  (c) 2018 Dan Pool (dpdp) parts based on work by meta-androcto  parts based on work by Saidenka, Materials Utils by MichaleW Materials Conversion: Silvio Falcinelli#
 import bpy
 from bpy import context
-import os
-os.system('cls')
+#import os
+#os.system('cls')
 
 bl_info = {
     "name": "CadMatClean",
@@ -38,6 +38,7 @@ class CadMatClean(bpy.types.Operator):
     bl_idname = "object.cad_mat_clean"
     bl_label = "Clean Cad Mats"
     bl_options = {'REGISTER', 'UNDO'}
+    global converted
 
     @classmethod
     def poll(cls, context):
@@ -50,19 +51,15 @@ class CadMatClean(bpy.types.Operator):
         sob = context.object.active_material_index
         sslot = context.object.material_slots[sob]
         sname = sslot.name
-        if not '.' in sname:
-            sbase = sname
-            ssuffix = None
-        else:
-            sbase, ssuffix = sname.rsplit('.',1)
-        print(sbase)
-        print(ssuffix)
+#        if not '.' in sname:
+#            sbase = sname
+#            ssuffix = None
+#        else:
+#            sbase, ssuffix = sname.rsplit('.',1)
         
         for ob in context.scene.objects:
             for slot in ob.material_slots:
-                print(slot)
                 self.fixup_slot(slot, sslot)
-
         return {'FINISHED'}
     
     def split_name(self, material):
@@ -89,13 +86,14 @@ class CadMatClean(bpy.types.Operator):
         if suffix == ssuffix:
             return
 
-        try:
-            base_mat = bpy.data.materials[sname]
-        except KeyError:
-            print('Base material %r not found' % base)
-            return
+        if base == sbase:
+            try:
+                base_mat = bpy.data.materials[sname]
+            except KeyError:
+                print('Base material %r not found' % base)
+                return
         
-        slot.material = base_mat
+            slot.material = base_mat
     #End Meta Androcto code as included in his addon
 
 def register():
