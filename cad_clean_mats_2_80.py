@@ -23,7 +23,7 @@ import bpy
 #os.system('cls')
 
 bl_info = {
-    "name": "CadMatClean",
+    "name": "CleanCadMats",
     "author": "Dan Pool (dpdp)",
     "version": (0,0,2),
     "blender": (2, 80,0),
