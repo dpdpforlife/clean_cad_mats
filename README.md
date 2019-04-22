@@ -1,5 +1,5 @@
 # clean_cad_mats
-Merges material base names in a blender file.
+Merges material base names in a Blender file.
 
 This is a simple addon for merging like named materials. This serves a common need for imported cad data. I often ran into issues with large assemblies imported into Blender where I may have hundreds of bolts each with a unique material (bolt_mat.001, bolt_mat.002, bolt_mat.003, bolt_mat.004, bolt_mat.005, bolt_mat.006, etc.) whereas in the cad software the model originated in, these were all a single material that could be edited one time and all instances of the bolt_mat would be updated. Manually reasigning hundreds of materials proved to be very time consuming. 
 
