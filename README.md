@@ -5,7 +5,7 @@ This is a simple addon for merging like named materials. This serves a common ne
 
 With Clean Cad Maps, you can choose which version of the material to keep and replace all materials that have the same base name. For instance in the image below, selecting Mat.004 in the material properties tab and choosing Clean Cad Mats from the Material Specials menu (which is called the Material Context menu in Blender 2.80) will replace all materials in the scene with the base name "Mat" (Mat.001, Mat.894, etc.) with the Mat.004 material.
 
-![Clean Cad Mats](https://i.ibb.co/HhB5NMB/Clean-Cad-Mats.png)
+![Clean Cad Mats](https://i.ibb.co/ngSRysB/Clean-Cad-Mats.png)
 
 
 As seen below, the addon works in a similar manner in Blender 2.79.
